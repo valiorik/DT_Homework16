@@ -29,13 +29,63 @@ namespace DT_Homework16.Basket.Tests
             IShoppingBasket basket = new ShoppingBasket();
 
             basket.AddItem(bread);
-            basket.AddItem(bread);
-            basket.AddItem(bread);
+            basket.AddItem(butter);
+            basket.AddItem(milk);
 
             var total = basket.GetTotalPrice();
 
             Assert.That(total, Is.EqualTo(2.95));
+        }
 
+        [Test]
+        public void BasketHas2ButterAnd2Bread()
+        {
+            IShoppingBasket basket = new ShoppingBasket();
+
+            basket.AddItem(butter);
+            basket.AddItem(butter);
+            basket.AddItem(bread);
+
+            var total = basket.GetTotalPrice();
+
+            Assert.That(total, Is.EqualTo(3.10));
+        }
+
+        [Test]
+        public void BasketHas4Milk()
+        {
+            IShoppingBasket basket = new ShoppingBasket();
+
+            basket.AddItem(milk);
+            basket.AddItem(milk);
+            basket.AddItem(milk);
+            basket.AddItem(milk);
+
+            var total = basket.GetTotalPrice();
+
+            Assert.That(total, Is.EqualTo(3.45));
+        }
+
+        [Test]
+        public void BasketHas2Butter1BreadAnd8Milk()
+        {
+            IShoppingBasket basket = new ShoppingBasket();
+
+            basket.AddItem(butter);
+            basket.AddItem(butter);
+            basket.AddItem(bread);
+            basket.AddItem(milk);
+            basket.AddItem(milk);
+            basket.AddItem(milk);
+            basket.AddItem(milk);
+            basket.AddItem(milk);
+            basket.AddItem(milk);
+            basket.AddItem(milk);
+            basket.AddItem(milk);
+
+            var total = basket.GetTotalPrice();
+
+            Assert.That(total, Is.EqualTo(9.00));
         }
     }
 }
