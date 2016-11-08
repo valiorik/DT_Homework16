@@ -47,5 +47,15 @@ namespace DT_Homework16.Data.Tests
                 Assert.IsNotNull(item.Id);
             }
         }
+
+        [Test]
+        public void CheckPricesAreCorrect()
+        {
+            // Prices should be checked agains price data source of some sort
+
+            Assert.That(allItems.Single<Item>(i => i.Name == "Milk").Price, Is.EqualTo(1.15));
+            Assert.That(allItems.Single<Item>(i => i.Name == "Butter").Price, Is.EqualTo(0.8));
+            Assert.That(allItems.Single<Item>(i => i.Name == "Bread").Price, Is.EqualTo(1));
+        }
     }
 }
