@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using DT_Homework16.Data.Contracts;
+using System.Collections.Generic;
 
 namespace DT_Homework16.Data
 {
-    interface IOffersSource
+    public interface IOffersSource
     {
         IEnumerable<Offer> GetAllOffers();
-
     }
 }

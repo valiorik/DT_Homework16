@@ -47,13 +47,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\DairyItem.cs" />
+    <Compile Include="Contracts\Discount.cs" />
     <Compile Include="Contracts\ItemTypes.cs" />
     <Compile Include="Contracts\BakeryItem.cs" />
     <Compile Include="Contracts\Item.cs" />
     <Compile Include="Contracts\Offer.cs" />
     <Compile Include="IItemsSource.cs" />
+    <Compile Include="IOffersSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticItemsSource.cs" />
+    <Compile Include="StaticOffersSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
