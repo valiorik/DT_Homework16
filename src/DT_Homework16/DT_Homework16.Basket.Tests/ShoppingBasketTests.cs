@@ -1,6 +1,7 @@
 ﻿using DT_Homework16.Data;
 using DT_Homework16.Data.Contracts;
 using NUnit.Framework;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace DT_Homework16.Basket.Tests
@@ -11,6 +12,7 @@ namespace DT_Homework16.Basket.Tests
         private Item bread;
         private Item milk;
         private Item butter;
+        private IEnumerable<Offer> offers;
 
         [SetUp]
         public void setUp()
@@ -21,6 +23,9 @@ namespace DT_Homework16.Basket.Tests
             bread = allItems.Single(i => i.Name == "Bread");
             milk = allItems.Single(i => i.Name == "Milk");
             butter = allItems.Single(i => i.Name == "Butter");
+
+            var offersStore = new StaticOffersSource();
+            offers = offersStore.GetAllOffers();
         }
 
         // Given the basket has 1 bread, 1 butter and 1 milk when I total the basket then the total
@@ -28,7 +33,7 @@ namespace DT_Homework16.Basket.Tests
         [Test]
         public void BasketHas1Bread1ButterAnd1Milk()
         {
-            IShoppingBasket basket = new ShoppingBasket();
+            IShoppingBasket basket = new ShoppingBasket(offers);
 
             basket.AddItem(bread);
             basket.AddItem(butter);
@@ -44,7 +49,7 @@ namespace DT_Homework16.Basket.Tests
         [Test]
         public void BasketHas2ButterAnd2Bread()
         {
-            IShoppingBasket basket = new ShoppingBasket();
+            IShoppingBasket basket = new ShoppingBasket(offers);
 
             basket.AddItem(butter);
             basket.AddItem(butter);
@@ -59,7 +64,7 @@ namespace DT_Homework16.Basket.Tests
         [Test]
         public void BasketHas4Milk()
         {
-            IShoppingBasket basket = new ShoppingBasket();
+            IShoppingBasket basket = new ShoppingBasket(offers);
 
             basket.AddItem(milk);
             basket.AddItem(milk);
@@ -76,7 +81,7 @@ namespace DT_Homework16.Basket.Tests
         [Test]
         public void BasketHas2Butter1BreadAnd8Milk()
         {
-            IShoppingBasket basket = new ShoppingBasket();
+            IShoppingBasket basket = new ShoppingBasket(offers);
 
             basket.AddItem(butter);
             basket.AddItem(butter);

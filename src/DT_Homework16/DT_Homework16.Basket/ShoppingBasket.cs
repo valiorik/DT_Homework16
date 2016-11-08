@@ -6,22 +6,23 @@ namespace DT_Homework16.Basket
 {
     public class ShoppingBasket : IShoppingBasket
     {
-        List<BasketItem> itemsInBasket;
+        List<Item> itemsInBasket;
+        IEnumerable<Offer> offers;
 
-        public ShoppingBasket()
+        public ShoppingBasket(IEnumerable<Offer> offers)
         {
-            itemsInBasket = new List<BasketItem>();
+            itemsInBasket = new List<Item>();
+            this.offers = offers;
         }
 
         public void AddItem(Item item)
         {
-            var basketItem = new BasketItem(item);
-            itemsInBasket.Add(basketItem);
+            itemsInBasket.Add(item);
         }
 
         public double GetTotalPrice()
         {
-            return itemsInBasket.Sum(i => i.Item.Price);
+            return itemsInBasket.Sum(i => i.Price);
         }
     }
 }

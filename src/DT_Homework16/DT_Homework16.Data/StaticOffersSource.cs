@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DT_Homework16.Data.Contracts;
 
 namespace DT_Homework16.Data
 {
-    class StaticOffersSource : IOffersSource
+    public class StaticOffersSource : IOffersSource
     {
         public IEnumerable<Offer> GetAllOffers()
         {
