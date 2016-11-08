@@ -23,6 +23,8 @@ namespace DT_Homework16.Basket.Tests
             butter = allItems.Single(i => i.Name == "Butter");
         }
 
+        // Given the basket has 1 bread, 1 butter and 1 milk when I total the basket then the total
+        // should be £2.95
         [Test]
         public void BasketHas1Bread1ButterAnd1Milk()
         {
@@ -37,6 +39,8 @@ namespace DT_Homework16.Basket.Tests
             Assert.That(total, Is.EqualTo(2.95));
         }
 
+        // Given the basket has 2 butter and 2 bread when I total the basket then the total should be
+        // £3.10
         [Test]
         public void BasketHas2ButterAnd2Bread()
         {
@@ -51,6 +55,7 @@ namespace DT_Homework16.Basket.Tests
             Assert.That(total, Is.EqualTo(3.10));
         }
 
+        // Given the basket has 4 milk when I total the basket then the total should be £3.45
         [Test]
         public void BasketHas4Milk()
         {
@@ -66,6 +71,8 @@ namespace DT_Homework16.Basket.Tests
             Assert.That(total, Is.EqualTo(3.45));
         }
 
+        // Given the basket has 2 butter, 1 bread and 8 milk when I total the basket then the total
+        // should be £9.00
         [Test]
         public void BasketHas2Butter1BreadAnd8Milk()
         {
