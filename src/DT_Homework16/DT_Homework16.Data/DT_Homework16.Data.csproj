@@ -52,7 +52,6 @@
     <Compile Include="Contracts\Item.cs" />
     <Compile Include="Contracts\Offer.cs" />
     <Compile Include="IItemsSource.cs" />
-    <Compile Include="IOffersSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticItemsSource.cs" />
   </ItemGroup>
