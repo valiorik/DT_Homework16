@@ -1,5 +1,4 @@
 ﻿using DT_Homework16.Data.Contracts;
-using System;
 using System.Collections.Generic;
 
 namespace DT_Homework16.Data
@@ -8,7 +7,13 @@ namespace DT_Homework16.Data
     {
         public IEnumerable<Item> GetAllItems()
         {
-            throw new System.Exception("not implemented");
+            var items = new List<Item>();
+
+            items.Add(new DairyItem { Name = "Butter", Price = 0.8 });
+            items.Add(new DairyItem { Name = "Milk", Price = 1.15 });
+            items.Add(new BakeryItem { Name = "Bread", Price = 1 });
+
+            return items;
         }
     }
 }

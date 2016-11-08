@@ -35,7 +35,7 @@ namespace DT_Homework16.Data.Tests
         public void MakeSureVodkaAndCigaretsAreNotPresent()
         {
             Assert.IsFalse(allItems.Any(i => i.Name == "Vodka"));
-            Assert.That(allItems.Any(i => i.Name == "Cigarets"));
+            Assert.IsFalse(allItems.Any(i => i.Name == "Cigarets"));
         }
 
         [Test]
