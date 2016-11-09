@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasketDiscount.cs" />
     <Compile Include="BasketItem.cs" />
     <Compile Include="IShoppingBasket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
