@@ -54,6 +54,7 @@ namespace DT_Homework16.Basket.Tests
             basket.AddItem(butter);
             basket.AddItem(butter);
             basket.AddItem(bread);
+            basket.AddItem(bread);
 
             var total = basket.GetTotalPrice();
 
