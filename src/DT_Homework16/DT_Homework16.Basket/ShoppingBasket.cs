@@ -50,8 +50,7 @@ namespace DT_Homework16.Basket
                             availableItemForDiscount.ApplyDiscount(discount.DiscountPercentage);
                         }
                     }
-                }
-                
+                } 
             }
 
             total = itemsInBasket.Sum(i => i.FinalPrice);
